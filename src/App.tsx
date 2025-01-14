@@ -27,19 +27,21 @@ class App extends React.Component<{}, State> {
     itemWidth: 130,
     frameSize: 3,
     step: 3,
-    animationDuration: 0,
+    animationDuration: 1000,
   };
 
   handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    this.setState((prevState) => ({
+
+    this.setState(prevState => ({
       ...prevState,
-      [name]: parseInt(value, 10)
+      [name]: parseInt(value, 10),
     }));
   };
 
   render() {
-    const { images, itemWidth, frameSize, step, animationDuration } = this.state;
+    const { images, itemWidth, frameSize, step, animationDuration } =
+      this.state;
 
     return (
       <div className="App">

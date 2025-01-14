@@ -15,19 +15,19 @@ const Carousel: React.FC<CarouselProps> = ({
   frameSize,
   step,
   animationDuration,
-}) =>{
+}) => {
   const totalWidth = itemWidth * images.length;
   const frameWidth = itemWidth * frameSize;
 
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => Math.max(prev - step, 0));
+    setCurrentIndex(prev => Math.max(prev - step, 0));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => Math.min(prev + step, images.length - frameSize));
-  }
+    setCurrentIndex(prev => Math.min(prev + step, images.length - frameSize));
+  };
 
   return (
     <div className="Carousel" style={{ width: frameWidth }}>
@@ -70,6 +70,6 @@ const Carousel: React.FC<CarouselProps> = ({
       </button>
     </div>
   );
-}
+};
 
 export default Carousel;
